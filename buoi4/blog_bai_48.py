@@ -4,7 +4,7 @@ server="localhost"
 port=3306
 database="studentmanagement"
 username="root"
-password="PkHbr@2f3oOtRH9O4!Cu"
+password="" #thay thế password ở đây
 
 '''conn = mysql.connector.connect(
                 host=server,
@@ -137,4 +137,5 @@ sql = "DELETE from student where ID=%s"
 val = (13,)
 cursor.execute(sql, val)
 conn.commit()
+
 print(cursor.rowcount," record(s) affected")
