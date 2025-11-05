@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Trần Duy Thanh - DatabaseConnect.ui</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>20</y>
+      <width>400</width>
+      <height>220</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Connection Setting:</string>
+    </property>
+
+    <!-- Server -->
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect><x>20</x><y>30</y><width>60</width><height>20</height></rect>
+     </property>
+     <property name="text">
+      <string>Server:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditServer">
+     <property name="geometry">
+      <rect><x>100</x><y>30</y><width>200</width><height>22</height></rect>
+     </property>
+     <property name="text">
+      <string>localhost</string>
+     </property>
+    </widget>
+
+    <!-- Port -->
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect><x>20</x><y>60</y><width>60</width><height>20</height></rect>
+     </property>
+     <property name="text">
+      <string>Port:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditPort">
+     <property name="geometry">
+      <rect><x>100</x><y>60</y><width>200</width><height>22</height></rect>
+     </property>
+     <property name="text">
+      <string>3306</string>
+     </property>
+    </widget>
+
+    <!-- Database -->
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect><x>20</x><y>90</y><width>70</width><height>20</height></rect>
+     </property>
+     <property name="text">
+      <string>Database:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditDatabase">
+     <property name="geometry">
+      <rect><x>100</x><y>90</y><width>200</width><height>22</height></rect>
+     </property>
+     <property name="text">
+      <string>lecturer_retails</string>
+     </property>
+    </widget>
+
+    <!-- User -->
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect><x>20</x><y>120</y><width>70</width><height>20</height></rect>
+     </property>
+     <property name="text">
+      <string>User:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditUser">
+     <property name="geometry">
+      <rect><x>100</x><y>120</y><width>200</width><height>22</height></rect>
+     </property>
+     <property name="text">
+      <string>root</string>
+     </property>
+    </widget>
+
+    <!-- Password -->
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect><x>20</x><y>150</y><width>70</width><height>20</height></rect>
+     </property>
+     <property name="text">
+      <string>Password:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditPassword">
+     <property name="geometry">
+      <rect><x>100</x><y>150</y><width>200</width><height>22</height></rect>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+    </widget>
+
+    <!-- Buttons -->
+    <widget class="QPushButton" name="pushButtonConnect">
+     <property name="geometry">
+      <rect><x>100</x><y>185</y><width>100</width><height>28</height></rect>
+     </property>
+     <property name="text">
+      <string>🔧 Connect</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonClose">
+     <property name="geometry">
+      <rect><x>210</x><y>185</y><width>100</width><height>28</height></rect>
+     </property>
+     <property name="text">
+      <string>⛔ Close</string>
+     </property>
+    </widget>
+    </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
