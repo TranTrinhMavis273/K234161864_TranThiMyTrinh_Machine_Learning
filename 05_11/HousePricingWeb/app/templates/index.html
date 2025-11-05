@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>House Pricing Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🏠 House Pricing Prediction</h1>
+
+  <form action="/train" method="post">
+    <label>Training Ratio (%):</label>
+    <input type="number" name="train_ratio" step="0.1" value="0.8">
+    <button type="submit">Train Model</button>
+  </form>
+
+  <a href="/models"><button>Load Model / Predict</button></a>
+
+  <h3>Sample Dataset</h3>
+  {{ tables|safe }}
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flash">
+      {% for msg in messages %}
+        <li>{{ msg }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+</body>
+</html>

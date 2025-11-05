@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Load Model & Predict</title>
+</head>
+<body>
+  <h2>Load Saved Models</h2>
+
+  <form action="/predict" method="post">
+    <label for="model_name">Select Model:</label>
+    <select name="model_name">
+      {% for m in models %}
+        <option value="{{ m }}">{{ m }}</option>
+      {% endfor %}
+    </select><br><br>
+
+    <h3>Input Values</h3>
+    <input type="text" name="income" placeholder="Avg. Area Income" required><br>
+    <input type="text" name="age" placeholder="Avg. Area House Age" required><br>
+    <input type="text" name="rooms" placeholder="Avg. Area Number of Rooms" required><br>
+    <input type="text" name="bedrooms" placeholder="Avg. Area Number of Bedrooms" required><br>
+    <input type="text" name="population" placeholder="Area Population" required><br><br>
+
+    <button type="submit">Predict Price</button>
+  </form>
+
+  <a href="/">← Back to Home</a>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="flash">
+      {% for msg in messages %}
+        <li>{{ msg }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+</body>
+</html>

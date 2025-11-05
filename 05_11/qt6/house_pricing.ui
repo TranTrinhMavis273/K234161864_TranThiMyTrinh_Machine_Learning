@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowTitle">
+   <string>House Pricing Prediction (PyQt6)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout" columnstretch="3,1">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="hl_dataset">
+      <item>
+       <widget class="QLabel" name="label_dataset">
+        <property name="text">
+         <string>Select Dataset:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txtDataset"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnPick">
+        <property name="text">
+         <string>1. Pick Dataset</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnView">
+        <property name="text">
+         <string>2. View Dataset</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="hl_train">
+      <item>
+       <widget class="QLabel" name="label_rate">
+        <property name="text">
+         <string>Training Rate (%):</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="spnRate">
+        <property name="minimum"><number>50</number></property>
+        <property name="maximum"><number>95</number></property>
+        <property name="value"><number>80</number></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnTrain">
+        <property name="text">
+         <string>3. Train Model</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnEval">
+        <property name="text">
+         <string>4. Evaluate Model</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblStatus">
+        <property name="text"><string/></property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="hl_tables">
+      <item>
+       <widget class="QTableWidget" name="tblEval">
+        <property name="columnCount"><number>7</number></property>
+        <attribute name="horizontalHeaderVisible"><bool>true</bool></attribute>
+        <column>
+         <property name="text"><string>Avg. Area Income</string></property>
+        </column>
+        <column>
+         <property name="text"><string>Avg. Area House Age</string></property>
+        </column>
+        <column>
+         <property name="text"><string>Avg. Area Number of Rooms</string></property>
+        </column>
+        <column>
+         <property name="text"><string>Avg. Area Number of Bedrooms</string></property>
+        </column>
+        <column>
+         <property name="text"><string>Area Population</string></property>
+        </column>
+        <column>
+         <property name="text"><string>Original Price</string></property>
+        </column>
+        <column>
+         <property name="text"><string>Prediction Price</string></property>
+        </column>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="vl_side">
+        <item>
+         <widget class="QLabel" name="label_coeff">
+          <property name="text"><string>Coefficient:</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="txtCoeff"/>
+        </item>
+        <item>
+         <layout class="QFormLayout" name="form_metrics">
+          <item row="0" column="0"><widget class="QLabel" name="label_mae"><property name="text"><string>MAE:</string></property></widget></item>
+          <item row="0" column="1"><widget class="QLineEdit" name="txtMAE"/></item>
+          <item row="1" column="0"><widget class="QLabel" name="label_mse"><property name="text"><string>MSE:</string></property></widget></item>
+          <item row="1" column="1"><widget class="QLineEdit" name="txtMSE"/></item>
+          <item row="2" column="0"><widget class="QLabel" name="label_rmse"><property name="text"><string>RMSE:</string></property></widget></item>
+          <item row="2" column="1"><widget class="QLineEdit" name="txtRMSE"/></item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnSave">
+          <property name="text"><string>5. Save Model</string></property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hl_load">
+          <item><widget class="QPushButton" name="btnLoad"><property name="text"><string>6. Load Model</string></property></widget></item>
+          <item><widget class="QComboBox" name="cmbModels"/></item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+
+    <item row="3" column="0">
+     <layout class="QGridLayout" name="grid_predict" columnstretch="1,1,1,1">
+      <item row="0" column="0"><widget class="QLabel" name="lblIn"><property name="text"><string>Avg. Area Income</string></property></widget></item>
+      <item row="0" column="1"><widget class="QDoubleSpinBox" name="spnIn"><property name="maximum"><double>999999999</double></property></widget></item>
+      <item row="1" column="0"><widget class="QLabel" name="lblAge"><property name="text"><string>Avg. Area House Age</string></property></widget></item>
+      <item row="1" column="1"><widget class="QDoubleSpinBox" name="spnAge"><property name="maximum"><double>200</double></property><property name="decimals"><number>4</number></property></widget></item>
+      <item row="2" column="0"><widget class="QLabel" name="lblRooms"><property name="text"><string>Avg. Area Number of Rooms</string></property></widget></item>
+      <item row="2" column="1"><widget class="QDoubleSpinBox" name="spnRooms"><property name="maximum"><double>999</double></property><property name="decimals"><number>4</number></property></widget></item>
+      <item row="3" column="0"><widget class="QLabel" name="lblBeds"><property name="text"><string>Avg. Area Number of Bedrooms</string></property></widget></item>
+      <item row="3" column="1"><widget class="QDoubleSpinBox" name="spnBeds"><property name="maximum"><double>999</double></property><property name="decimals"><number>4</number></property></widget></item>
+      <item row="4" column="0"><widget class="QLabel" name="lblPop"><property name="text"><string>Area Population</string></property></widget></item>
+      <item row="4" column="1"><widget class="QDoubleSpinBox" name="spnPop"><property name="maximum"><double>999999999</double></property><property name="decimals"><number>4</number></property></widget></item>
+      <item row="5" column="1"><widget class="QPushButton" name="btnPredict"><property name="text"><string>7. Predict</string></property></widget></item>
+      <item row="5" column="2"><widget class="QLabel" name="lblPred"><property name="text"><string>Prediction Price:</string></property></widget></item>
+      <item row="5" column="3"><widget class="QLineEdit" name="txtPred"/></item>
+     </layout>
+    </item>
+
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
